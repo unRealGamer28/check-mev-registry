@@ -1,0 +1,24 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+/* body {
+  background-color: #dbdbdb;
+  color: #000000;
+} */
+
+
+body {
+/*   background-color: black; */
+  background-color: #1c2333;
+  color: white;
+}
+
+.list-group-item {
+background-color: transparent;
+/* border-top: 1px solid #ddd; */
+/* border-radius: 0; */
+border-color: white;
+color: #fff;
+}

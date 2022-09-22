@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Check MEV Registry</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+  </head>
+  <body>
+    <div class="container-md px-5 pt-5">
+      <h1>Check Validator MEV Registry</h1>
+      <p class="my-3">A simple website to check if your validator is registered with MEV relays.</p>
+      <div class="input-group mb-3">
+        <input type="text" id="validatorKey" class="form-control" placeholder="Validator's public key" aria-label="Validator's public key" aria-describedby="checkButton">
+        <button class="btn btn-primary" type="button" id="checkButton">Check!</button>
+      </div>
+    </div>
+
+    <hr class="container-md">
+
+    <div class="container-md px-5 py-5">
+      <p>This website supports checking MEV registry for 6/7 public relays (Manifold currently doesn't support this check).</p>
+
+      <ul class="list-group list-group-flush list-group-numbered list-group-mev">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div class="px-2 flex-grow-1">
+            Flashbots
+          </div>
+          <div id="flashbots">
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div class="px-2 flex-grow-1">
+            BloXroute Max Profit (Censorship-Free)
+          </div>
+          <div id="bloxrouteMaxProfit">
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div class="px-2 flex-grow-1">
+            BloXroute Ethical (Censorship-Free)
+          </div>
+          <div id="bloxrouteEthical">
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div class="px-2 flex-grow-1">
+            BloXroute Regulated
+          </div>
+          <div id="bloxrouteRegulated">
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div class="px-2 flex-grow-1">
+            Blocknative
+          </div>
+          <div id="blocknative">
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div class="px-2 flex-grow-1">
+            Eden
+          </div>
+          <div id="eden">
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <hr class="container-md">
+
+    <div class="container-md px-5 py-5">
+      <p><b>Data Privacy:</b> This site does not retain any data submitted by the user. No information about a specific validator or user are retained after data retrieval. All data displayed is public data from the blockchain.</p>
+    </div>
+
+    <script type="module" src="/scripts/main.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <!-- Axios HTTP -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
+</html>
