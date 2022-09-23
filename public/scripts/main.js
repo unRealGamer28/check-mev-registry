@@ -12,17 +12,28 @@ const urlPath = "/relay/v1/data/validator_registration?pubkey=";
 
 const checkButton = document.getElementById("checkButton");
 
-checkButton.onclick = function () {
+checkButton.onclick = async function () {
   let validatorKey = document.getElementById("validatorKey").value;
 
   if (!validatorKey) return;
+
+  removeAllChildNodes(checkButton);
+  checkButton.setAttribute('disabled', '');
+  const loadingSpinner = document.createElement('span');
+  loadingSpinner.setAttribute('class', 'spinner-border spinner-border-sm mx-1');
+  loadingSpinner.setAttribute('role', 'status');
+  loadingSpinner.setAttribute('aria-hidden', 'true');
+  checkButton.appendChild(loadingSpinner);
+  checkButton.appendChild(document.createTextNode('Loading...'));
+
+  removeAllResults();
 
   if (validatorKey[0] != "0" && validatorKey[1] != "x") validatorKey = "0x" + validatorKey;
   
   for (const relay in relayList) {
     const checkUrl = relayList[relay] + urlPath + validatorKey;
     
-    axios({
+    await axios({
       method: 'get',
       url: "/checkRegistry",
       params: {
@@ -55,10 +66,23 @@ checkButton.onclick = function () {
         console.log(error);
       })
   }
+
+  removeAllChildNodes(checkButton);
+  checkButton.appendChild(document.createTextNode('Check!'));
+  checkButton.removeAttribute('disabled');
 }
+
+// -------------------------------------------------
 
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
+}
+
+function removeAllResults() {
+  for (const relay in relayList) {
+    const row = document.getElementById(relay);
+    removeAllChildNodes(row);
+  }
 }
