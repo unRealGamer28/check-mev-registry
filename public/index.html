@@ -23,6 +23,10 @@
         <input type="text" id="validatorKey" class="form-control" placeholder="My validator's public wallet address" aria-label="MY validator's public wallet address" aria-describedby="checkButton">
         <button class="btn btn-primary" type="button" id="checkButton">Check!</button>
       </div>
+      <div class="form-check form-switch form-check-reverse">
+        <input class="form-check-input" type="checkbox" id="checkFeeRecipient" checked>
+        <label class="form-check-label" for="checkFeeRecipient">Check my fee recipient address too!</label>
+      </div>
     </div>
 
     <hr class="container-md">
@@ -32,43 +36,55 @@
 
       <ul class="list-group list-group-flush list-group-numbered list-group-mev">
         <li class="list-group-item d-flex justify-content-between align-items-center">
-          <div class="px-2 flex-grow-1">
+          <div class="px-2">
             Flashbots
+          </div>
+          <div id="flashbotsFeeRecipient" class="px-2 flex-grow-1 text-end">
           </div>
           <div id="flashbots">
           </div>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
-          <div class="px-2 flex-grow-1">
+          <div class="px-2">
             BloXroute Max Profit (Censorship-Free)
+          </div>
+          <div id="bloxrouteMaxProfitFeeRecipient" class="px-2 flex-grow-1 text-end">
           </div>
           <div id="bloxrouteMaxProfit">
           </div>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
-          <div class="px-2 flex-grow-1">
+          <div class="px-2">
             BloXroute Ethical (Censorship-Free)
+          </div>
+          <div id="bloxrouteEthicalFeeRecipient" class="px-2 flex-grow-1 text-end">
           </div>
           <div id="bloxrouteEthical">
           </div>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
-          <div class="px-2 flex-grow-1">
+          <div class="px-2">
             BloXroute Regulated
+          </div>
+          <div id="bloxrouteRegulatedFeeRecipient" class="px-2 flex-grow-1 text-end">
           </div>
           <div id="bloxrouteRegulated">
           </div>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
-          <div class="px-2 flex-grow-1">
+          <div class="px-2">
             Blocknative
+          </div>
+          <div id="blocknativeFeeRecipient" class="px-2 flex-grow-1 text-end">
           </div>
           <div id="blocknative">
           </div>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
-          <div class="px-2 flex-grow-1">
+          <div class="px-2">
             Eden
+          </div>
+          <div id="edenFeeRecipient" class="px-2 flex-grow-1 text-end">
           </div>
           <div id="eden">
           </div>

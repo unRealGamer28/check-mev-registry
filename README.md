@@ -26,6 +26,7 @@ This project supports checking MEV registery for 6/7 public MEV relays (Manifold
 ## Features
 
 - Input your validator's public wallet address to check if your validator is registered with public MEV boost relays.
+- Use the checkbox to verify your validator's fee recipient address that's been registered with a particular relay.
 - Clean and simple to use UI.
 
 

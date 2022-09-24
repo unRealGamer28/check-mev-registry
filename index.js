@@ -21,10 +21,16 @@ app.get("/", (request, response) => {
 app.get("/checkRegistry", (req, res) => {
   axios.get(req.query.checkUrl)
     .then(function (response) {
-      res.status(200).send(true);
+      console.log(response.data);
+      res.status(200).send({
+        registered: true,
+        feeRecipient: response.data.message.fee_recipient
+      });
     })
     .catch(function (error) {
-      res.status(200).send(false);
+      res.status(200).send({
+        registered: false
+      });
     });
 });
 

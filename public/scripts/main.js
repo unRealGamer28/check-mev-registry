@@ -28,6 +28,8 @@ checkButton.onclick = async function () {
 
   removeAllResults();
 
+  const checkFeeRecipient = document.getElementById('checkFeeRecipient').checked;
+
   if (validatorKey[0] != "0" && validatorKey[1] != "x") validatorKey = "0x" + validatorKey;
   
   for (const relay in relayList) {
@@ -44,7 +46,12 @@ checkButton.onclick = async function () {
         const row = document.getElementById(relay);
         removeAllChildNodes(row);
         
-        if (response.data) {
+        if (response.data.registered) {
+          if (checkFeeRecipient) {
+            const feeRecipientRow = document.getElementById(relay+"FeeRecipient");
+            feeRecipientRow.appendChild(document.createTextNode(response.data.feeRecipient));
+          }
+            
           const checkBadge = document.createElement('span');
           checkBadge.setAttribute('class', 'badge bg-primary rounded-pill');
           const checkIcon = document.createElement('i');
@@ -84,5 +91,7 @@ function removeAllResults() {
   for (const relay in relayList) {
     const row = document.getElementById(relay);
     removeAllChildNodes(row);
+    const feeRecipientRow = document.getElementById(relay+"FeeRecipient");
+    removeAllChildNodes(feeRecipientRow);
   }
 }
