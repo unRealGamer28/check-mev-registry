@@ -25,7 +25,7 @@ This project supports checking MEV registery for 6/7 public MEV relays (Manifold
 
 ## Features
 
-- Input your validator's public key to check if your validator is registered with public MEV boost relays.
+- Input your validator's public wallet address to check if your validator is registered with public MEV boost relays.
 - Clean and simple to use UI.
 
 
@@ -95,7 +95,7 @@ Read more here: https://www.reddit.com/r/ethstaker/comments/xj3bdq/mevboost_rela
 
 More over here: https://www.reddit.com/r/ethstaker/comments/xiwkd7/best_arguments_to_refute_postmerge_centralization/
 
-#### 4. Do you store any logs? IP's, validator's public keys, etc?
+#### 4. Do you store any logs? IP's, validator's public wallet address, etc?
 
 - No, I don't.
 - You're more than welcome to check the source code and verify it yourself. Then build it locally to use it.
