@@ -21,7 +21,6 @@ app.get("/", (request, response) => {
 app.get("/checkRegistry", (req, res) => {
   axios.get(req.query.checkUrl)
     .then(function (response) {
-      console.log(response.data);
       res.status(200).send({
         registered: true,
         feeRecipient: response.data.message.fee_recipient
